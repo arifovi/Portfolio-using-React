@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portfolio-Syed Arif Rahman</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      const headTitle = {
+        textAlign: 'center'
+      };
+
+      const MyImg = {
+        borderRadius: '50%'
+      };
+
+      const MyDetailClassS = {
+        width: '32%',
+        float: 'left'
+      };
+
+      const MyDetailClassListS = {
+        width: '10%',
+        float: 'left',
+        color: 'green'
+      };
+
+      const MyDetailClassDetailS = {
+        width: '58%',
+        float: 'left'
+      };
+
+      const MyDetailImg = {
+        width : '100%'
+      };
+
+      const MyDtlClass1 = {
+        width: '30%',
+        marginTop: '20px',
+        float: 'left'
+      };
+
+      const MyDtlClass2 = {
+        width: '68%',
+        paddingLeft: '2%',
+        float: 'left'
+      };
+
+      
+
+      const MyConClass = {
+        width: '34%',
+        borderLeft: '1px solid rgb(154,154,154)',
+        paddingLeft: '10px',
+        float: 'left'
+      };
+
+      function Portfolio(props){
+      console.log(props);
+        return(
+          <div>            
+            <MyDetailClass name={props.name} dob={props.dob} proff="Student" expert="PHP,HTML,CSS,MYSQL,React" age="28" place={props.location} />
+            <MyEducationClass /> 
+            <MyExperienceClass />  
+            <MyContactClass />         
+          </div>
+        );
+      }
+
+
+      class MyDetailClass extends React.Component{
+        render(){
+          var props = this.props;
+          return(  
+            <div> 
+              <div>
+                <h1 style={headTitle}>My Portfolio</h1>
+              </div>   
+              <hr />    
+              <div style={MyDetailClassS}>
+                <img src="arif.jpg" style={MyImg} />
+              </div>   
+              <div style={MyDetailClassListS}>
+                <h3>Name </h3>
+                <h3>Location </h3>
+                <h3>Profession</h3>
+                <h3>Age</h3>
+                <h3>Expertise</h3>
+                <h3>DOB</h3>
+              </div> 
+              <div style={MyDetailClassDetailS}>
+                <h3>{props.name}</h3>
+                <h3>{props.place}</h3>
+                <h3>{props.proff}</h3>
+                <h3>{props.age}</h3>
+                <h3>{props.expert}</h3>
+                <h3>{props.dob}</h3>
+              </div>
+            </div>         
+          )
+        }
+      }
+
+      class MyEducationClass extends React.Component{
+        render(){
+          return(  
+            <div> 
+              <div>
+                <h1>EDUCATION</h1>
+              </div>       
+              <div style={MyDtlClass1}>
+                <img src="education.jpg" style={MyDetailImg} />
+              </div>   
+              <div style={MyDtlClass2}>
+                <h3>MSC</h3>
+                <p>Running Masters Student in Software Engineering of Distributed Systems from KTH Royal Institute of Technology, Stockholm, Sweden.</p>
+                <h3>BSc(Engg.) in CSE</h3>
+                <p>Completed Graduation(BSc(Engg.) in CSE) from Asian University of Bangladesh, Dhaka, Bangladesh. Finished several course Projects with PHP, Mysql, ASP.NET, Oracle etc. Some of are - 
+                <ul>
+                  <li>Account Management</li>
+                  <li>Payroll Management</li>
+                  <li>Currency Exchange</li>
+                  <li>Student Fees Management etc.</li>
+                </ul>
+                </p>
+                <p>Online Exam System was Final Project in my Graduation level using ASP.net, SQL, Javascript, HTML, CSS</p>
+              </div> 
+              
+            </div>         
+          )
+        }
+      }
+
+      class MyExperienceClass extends React.Component{
+        render(){
+          return(  
+            <div> 
+              <div>
+                <h1>EXPERIENCE</h1>
+              </div>       
+              <div style={MyDtlClass1}>
+                <img src="experience.jpg" style={MyDetailImg} />
+              </div>   
+              <div style={MyDtlClass2}>
+                <h3>Web Developer - Systech Digital Limited(Oct'13 - Apr'15)</h3>
+                <p>Systech Digital Limited is a renowned Software development company in Bangladesh. Starting as a intern in PHP dept. Within 6 months become a Web developer of Systeh. </p>
+                <p>Developed so many static and dynamic websites with full of client satisfaction. Enroll in multiple big projects with PHP and ASP.Net with HTML,SQL, Mysql, Bootstrap, Javascript, CSS, Jquery etc. Become a PHP lead developer. Manage Team and also client.</p>
+                <h3>Lecturer - Asian University of Bangladesh(May'15 - Aug'17)</h3>
+                <p>Lecturer in Asian University of Bangladesh at deartment of CSE. Take lectures on OOP, AI, Web Programming, Basic C and Simulation Modeling.Create lectures, assignments, questions. Take exams and view answer sheets as well. Supervised multile projects and thesis.</p>
+              </div> 
+              <hr />
+            </div>         
+          )
+        }
+      }
+
+      class MyContactClass extends React.Component{
+        render(){
+          return(  
+            <div>        
+              <div style={MyDtlClass1}>
+                <img src="contact.png" style={MyDetailImg} />
+              </div>   
+              
+              <div style={MyConClass}>
+                <h3>Address</h3>
+                <p>Bjorksatravagen 32, 1304, 12737</p>
+                <p>Skarholmen, Stockholm, Sweden</p>
+                <h3>Email</h3>
+                <p>arifkh77@yahoo.com</p>
+                
+              </div> 
+              
+              <div style={MyConClass}>
+                <h3>Mobile</h3>
+                <p>+46 725 183 546</p>
+                <p>+46 700 394 446</p>
+                <h3>Website</h3>
+                <p>www.findingsoft.com</p>
+              </div>
+              
+            </div>         
+          )
+        }
+      }
+
+
+      ReactDOM.render(
+        <div>          
+          <Portfolio name="Syed Arif Rahman" dob="31/12/1989" location="Stockholm, Sweden" />          
+        </div>,
+        document.getElementById('root')        
+      );
+
+    </script>
+    
+  </body>
+</html>
+<!-- TEST CODE -->
+<!-- 1 -->
+<!-- ReactDOM.render(
+        <h1>Hello, world!</h1>,
+        document.getElementById('root')
+      ); -->
+<!-- 2 -->
+      <!-- ReactDOM.render(
+  <div><h1>Hello, world!</h1><a href="https://www.sokaleralo.com">SokalerAlo</a></div>,
+      document.getElementById('root')); -->
+<!-- 3 -->
+    <!-- function TestHello(){// In React all name start with capital letter
+        <h1>Hello</h1>
+      }
+
+      ReactDOM.render(
+        <TestHello />,
+        document.getElementById('root')        
+      ); -->
+<!-- 4 -->
+<!-- function TestHello(){
+        return(<h1>Hello</h1>);
+      }
+
+      ReactDOM.render(
+        <TestHello />,
+        document.getElementById('root')        
+      ); -->
+
+<!-- 5 -->
+<!-- function TestHello(param){
+      console.log(param);
+        return(
+          <div>
+            <h1>React Tutorial</h1>
+            <p>Start my React passing {param.name}</p>
+          </div>
+        );
+      }
+
+      function Age(age){
+        return(
+          <div>
+            <p>My Age is {age.value}</p>
+            <p>Gender : {age.gender}</p>
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <div>
+          <TestHello name="signal"/>
+          <Age value="20" gender="Male"/>
+          <TestHello name="Value"/>
+        </div>,
+        document.getElementById('root')        
+      ); -->
+<!-- 6 -->
+<!-- function TestHello(param){
+      console.log(param);
+        return(
+          <div>
+            <h1>React Tutorial</h1>
+            <Age value={param.age} gender="Male"/>
+            <p>Start my React passing {param.name}</p>
+          </div>
+        );
+      }
+
+      function Age(age){
+        return(
+          <div>
+            <p>My Age is {age.value}</p>
+            <p>Gender : {age.gender}</p>
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <div>
+          <TestHello name="signal" age="25"/>
+          <TestHello name="Value" age="30"/>
+        </div>,
+        document.getElementById('root')        
+      ); -->

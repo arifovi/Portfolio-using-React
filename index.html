@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      function TestHello(props){
+      console.log(props);
+        return(
+          <div>
+            <h1>React Tutorial</h1>
+            <MyAgeClass age={props.age} gender="Male"/>
+            <p>Start my React passing {props.name}</p>
+          </div>
+        );
+      }
+
+      class MyAgeClass extends React.Component{
+        render(){
+          var test = this.props;
+          return(
+          
+            <div>
+              <p>My Age is {test.age}</p>
+              <p>Gender : {test.gender}</p>
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(
+        <div>
+          <TestHello name="signal" age="25"/>
+          <TestHello name="parameter" age="30"/>
+          
+        </div>,
+        document.getElementById('root')        
+      );
+
+    </script>
+    
+  </body>
+</html>
+<!-- TEST CODE -->
+<!-- 1 -->
+<!-- ReactDOM.render(
+        <h1>Hello, world!</h1>,
+        document.getElementById('root')
+      ); -->
+<!-- 2 -->
+      <!-- ReactDOM.render(
+  <div><h1>Hello, world!</h1><a href="https://www.sokaleralo.com">SokalerAlo</a></div>,
+      document.getElementById('root')); -->
+<!-- 3 -->
+    <!-- function TestHello(){// In React all name start with capital letter
+        <h1>Hello</h1>
+      }
+
+      ReactDOM.render(
+        <TestHello />,
+        document.getElementById('root')        
+      ); -->
+<!-- 4 -->
+<!-- function TestHello(){
+        return(<h1>Hello</h1>);
+      }
+
+      ReactDOM.render(
+        <TestHello />,
+        document.getElementById('root')        
+      ); -->
+
+<!-- 5 -->
+<!-- function TestHello(param){
+      console.log(param);
+        return(
+          <div>
+            <h1>React Tutorial</h1>
+            <p>Start my React passing {param.name}</p>
+          </div>
+        );
+      }
+
+      function Age(age){
+        return(
+          <div>
+            <p>My Age is {age.value}</p>
+            <p>Gender : {age.gender}</p>
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <div>
+          <TestHello name="signal"/>
+          <Age value="20" gender="Male"/>
+          <TestHello name="Value"/>
+        </div>,
+        document.getElementById('root')        
+      ); -->
+<!-- 6 -->
+<!-- function TestHello(param){
+      console.log(param);
+        return(
+          <div>
+            <h1>React Tutorial</h1>
+            <Age value={param.age} gender="Male"/>
+            <p>Start my React passing {param.name}</p>
+          </div>
+        );
+      }
+
+      function Age(age){
+        return(
+          <div>
+            <p>My Age is {age.value}</p>
+            <p>Gender : {age.gender}</p>
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <div>
+          <TestHello name="signal" age="25"/>
+          <TestHello name="Value" age="30"/>
+        </div>,
+        document.getElementById('root')        
+      ); -->
